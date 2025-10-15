@@ -335,6 +335,50 @@
             left: 100%;
         }
 
+        /* New iOS 18 Image Styles */
+        .ios18-image-container {
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .ios18-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .ios18-image-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .ios18-image-container:hover .ios18-image {
+            transform: scale(1.03);
+        }
+
+        .ios18-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-light);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .ios18-image-container:hover::before {
+            opacity: 0.3;
+        }
+
         .features {
             padding: 100px 0;
             background-color: var(--card-color);
@@ -822,6 +866,11 @@
             .contact-links {
                 gap: 10px;
             }
+            
+            .ios18-image-container {
+                margin: 30px auto;
+                border-radius: 15px;
+            }
         }
 
         /* Additional improvements */
@@ -881,6 +930,11 @@
             <h1>iOS Launcher</h1>
             <p>Transform your Android device into an authentic iPhone experience. Get the complete iOS look with custom icons, widgets, and smooth interface.</p>
             <a href="#" class="details-btn" id="detailsBtn">App Details</a>
+            
+            <!-- Added iOS 18 Image -->
+            <div class="ios18-image-container">
+                <img src="https://static.iphoneitalia.com/wp-content/uploads/2024/07/ios-18-dark-mode-third-party-icons.jpg" alt="iOS 18 Dark Mode with Third-Party Icons" class="ios18-image">
+            </div>
         </div>
     </section>
 
